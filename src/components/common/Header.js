@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Responsive from './Responsive';
-import {Link} from 'react-router-dom';
 
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
 `;
 
 const Wrapper = styled.div`
@@ -16,18 +14,39 @@ const Wrapper = styled.div`
   height: 4rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   
   .logo {
+    cursor: pointer;
     font-size: 1.125rem;
+    font-weight: 700;
     letter-spacing: 2px;
     padding: 0 2rem;
     text-decoration: none;
   }
   
-  @media (max-width: 768px) {
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    div {
+      cursor: pointer;
+    }
+    
+    div + div {
+      padding-left: 1rem;
+    }
+  }
+  
+  @media (max-width: 1220px) {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+`;
+
+const Spacer = styled.div`
+  height: 4rem;
 `;
 
 const Header = () => {
@@ -35,9 +54,16 @@ const Header = () => {
         <>
             <HeaderBlock>
                 <Wrapper>
-                    <Link to="/" class="logo">U-Zo</Link>
+                    <div className="logo">U-Zo</div>
+                    <div className="right">
+                        <div>About</div>
+                        <div>Skills</div>
+                        <div>Projects</div>
+                        <div>Contact</div>
+                    </div>
                 </Wrapper>
             </HeaderBlock>
+            <Spacer/>
         </>
     );
 };

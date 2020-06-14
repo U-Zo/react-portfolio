@@ -1,11 +1,10 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import main from './components/main/main';
+import MainPage from './pages/MainPage';
 
 const App = () => {
     return (
         <>
-            <Route component={main} path="/" exact/>
+            <MainPage/>
         </>
     );
 };
