@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 
 const ProjectsBlock = styled.div`
-  background: #fafafa;
-  height: 400px;
 `;
 
 const Projects = () => {
@@ -13,6 +11,6 @@ const Projects = () => {
             <ProjectsBlock/>
         </>
     );
-}
+};
 
 export default Projects;
