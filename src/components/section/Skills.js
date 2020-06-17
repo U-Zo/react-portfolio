@@ -10,25 +10,31 @@ const SkillsBlock = styled.div`
   padding-bottom: 4rem;
   text-align: center;
   
-  .title {
-    
+  > .title {
+    font-size: 1.3rem;
   }
 `;
 
 const Wrapper = styled(Responsive)`
+  padding-top: 4rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
 
 const Skills = () => {
     return (
         <SkillsBlock>
-            Skills
+            <p className="title">Skills</p>
             <Wrapper>
-                <Card img={<DiHtml5 size="125" color="#FF8200"/>} title="HTML" text="안녕"/>
-                <Card img={<DiCss3 size="125" color="#646EFF"/>} title="CSS" text="안녕"/>
-                <Card img={<DiJsBadge size="125" color="#FF9614"/>} title="JavaScript" text="안녕"/>
+                <Card img={<DiHtml5 size="125" color="#FF8200"/>} title="HTML">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </Card>
+                <Card img={<DiCss3 size="125" color="#646EFF"/>} title="CSS">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </Card>
+                <Card img={<DiJsBadge size="125" color="#FF9614"/>} title="JavaScript">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </Card>
             </Wrapper>
         </SkillsBlock>
     );
