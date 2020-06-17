@@ -47,12 +47,12 @@ const Spacer = styled.div`
 `;
 
 
-const Header = ({about, skills, projects}) => {
+const Header = ({home, about, skills, projects}) => {
     return (
         <>
             <HeaderBlock>
                 <Wrapper>
-                    <div className="logo">U-Zo</div>
+                    <div className="logo" onClick={home}>U-Zo</div>
                     <ul className="right">
                         <li onClick={about}>소개</li>
                         <li onClick={skills}>기술스택</li>
