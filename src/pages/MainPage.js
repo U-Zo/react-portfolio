@@ -1,21 +1,29 @@
-import React from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Header from '../components/common/Header';
 import Top from '../components/section/Top';
 import Footer from '../components/common/Footer';
 import About from '../components/section/About';
 import Skills from '../components/section/Skills';
 import Projects from '../components/section/Projects';
-import Contact from '../components/section/Contact';
 
 const MainPage = () => {
+    const [aboutTop, setAboutTop] = useState(null);
+
+    const aboutRef = useRef();
+
+    useEffect(() => {
+        setAboutTop(aboutRef);
+    }, []);
+
+    console.log(aboutTop);
+
     return (
         <>
             <Header/>
             <Top/>
-            <About/>
+            <About ref={aboutRef}/>
             <Skills/>
             <Projects/>
-            <Contact/>
             <Footer/>
         </>
     );
