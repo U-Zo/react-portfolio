@@ -11,7 +11,7 @@ const CardBlock = styled.div`
   }
 `;
 
-const Card = ({img, title, text, ...rest}) => {
+const Card = ({img, title, children, ...rest}) => {
     return (
         <CardBlock {...rest}>
             {img}
@@ -19,7 +19,7 @@ const Card = ({img, title, text, ...rest}) => {
                 {title}
             </p>
             <p>
-                {text}
+                {children}
             </p>
         </CardBlock>
     );
