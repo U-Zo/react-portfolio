@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Responsive from './Responsive';
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -8,9 +9,7 @@ const HeaderBlock = styled.div`
   box-shadow: 0 2px rgba(0, 0, 0, 0.1);
 `;
 
-const Wrapper = styled.div`
-  padding-left: 4rem;
-  padding-right: 4rem;
+const Wrapper = styled(Responsive)`
   height: 4rem;
   display: flex;
   align-items: center;
@@ -18,10 +17,8 @@ const Wrapper = styled.div`
   
   .logo {
     cursor: pointer;
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 1.45rem;
     letter-spacing: 2px;
-    padding: 0 2rem;
     text-decoration: none;
   }
   
@@ -30,11 +27,11 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     
-    div {
+    li {
       cursor: pointer;
     }
     
-    div + div {
+    li + li {
       padding-left: 1rem;
     }
   }
@@ -49,18 +46,19 @@ const Spacer = styled.div`
   height: 4rem;
 `;
 
-const Header = () => {
+
+const Header = ({about, skills, projects}) => {
     return (
         <>
             <HeaderBlock>
                 <Wrapper>
                     <div className="logo">U-Zo</div>
-                    <div className="right">
-                        <div>About</div>
-                        <div>Skills</div>
-                        <div>Projects</div>
-                        <div>Contact</div>
-                    </div>
+                    <ul className="right">
+                        <li onClick={about}>소개</li>
+                        <li onClick={skills}>기술스택</li>
+                        <li onClick={projects}>프로젝트</li>
+                        <li>깃허브</li>
+                    </ul>
                 </Wrapper>
             </HeaderBlock>
             <Spacer/>
