@@ -4,8 +4,8 @@ import Responsive from '../common/Responsive';
 
 const AboutBlock = styled(Responsive)`
   display: flex;
-  margin-top: 8rem;
-  margin-bottom: 8rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
   justify-content: space-between;
   align-items: center;
   
