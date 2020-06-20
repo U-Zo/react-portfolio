@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Card from '../common/Card';
 import Responsive from '../common/Responsive';
+import Modal from '../common/Modal';
 
 const Project = styled(Card)`
   width: 20%;
@@ -10,6 +11,11 @@ const Project = styled(Card)`
 const ProjectsBlock = styled.div`
   padding-top: 4rem;
   padding-bottom: 4rem;
+  text-align: center;
+  
+  > .title {
+    font-size: 1.3rem;
+  }
 `;
 
 const Wrapper = styled(Responsive)`
@@ -19,14 +25,30 @@ const Wrapper = styled(Responsive)`
 `;
 
 const Projects = () => {
+    const [modal, setModal] = useState(false);
+    const onClick = () => {
+        setModal(true);
+    };
+    const onClose = () => {
+        setModal(false);
+    };
+
     return (
-        <>
-            <ProjectsBlock>
-                <Wrapper>
-                    <Project title="Lorem" text="Lorem Ipsum is simply dummy text"/>
-                </Wrapper>
-            </ProjectsBlock>
-        </>
+        <ProjectsBlock>
+            <p className="title">Projects</p>
+            <Wrapper>
+                <Project onClick={onClick} title="Lorem">
+                    Lorem Ipsum is simply dummy text
+                </Project>
+                <Modal visible={modal} onClose={onClose}/>
+                <Project title="Lorem">
+                    Lorem Ipsum is simply dummy text
+                </Project>
+                <Project title="Lorem">
+                    Lorem Ipsum is simply dummy text
+                </Project>
+            </Wrapper>
+        </ProjectsBlock>
     );
 };
 
