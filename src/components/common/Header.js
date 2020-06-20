@@ -57,7 +57,9 @@ const Header = ({home, about, skills, projects}) => {
                         <li onClick={about}>소개</li>
                         <li onClick={skills}>기술스택</li>
                         <li onClick={projects}>프로젝트</li>
-                        <li>깃허브</li>
+                        <li>
+                            <a href="https://github.com/u-zo" target="_blank">깃허브</a>
+                        </li>
                     </ul>
                 </Wrapper>
             </HeaderBlock>
