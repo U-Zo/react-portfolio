@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import Responsive from "./Responsive";
+import styled, {keyframes} from 'styled-components';
 
 const FullScreen = styled.div`
   position: fixed;
@@ -14,19 +15,31 @@ const FullScreen = styled.div`
   align-items: center;
 `;
 
-const ModalBlock = styled.div`
-  width: 320px;
+const ModalFade = keyframes`
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+`;
+
+const ModalBlock = styled(Responsive)`
   background: #fff;
   padding: 1.5rem;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
+  animation: ${ModalFade} 0.3s ease-out forwards;
   
   h2 {
     margin-top: 0;
     margin-bottom: 1rem;
   }
   
-  p {
+  div {
     margin-bottom: 3rem;
   }
   
@@ -50,7 +63,7 @@ const Modal = ({visible, title, description, onClose}) => {
         <FullScreen onClick={onClose}>
             <ModalBlock>
                 <h2>{title}</h2>
-                <p>{description}</p>
+                <div>{description}</div>
                 <button className="button" onClick={onClose}>닫기</button>
             </ModalBlock>
         </FullScreen>
