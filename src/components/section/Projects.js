@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import Card from '../common/Card';
 import Responsive from '../common/Responsive';
 import Modal from '../common/Modal';
+import {readProject} from '../../lib/api/project';
 
 const Project = styled(Card)`
   width: 20%;
@@ -25,6 +26,7 @@ const Wrapper = styled(Responsive)`
 `;
 
 const Projects = () => {
+    const [projects, setProjects] = useState([]);
     const [modal, setModal] = useState(false);
     const onClick = () => {
         setModal(true);
@@ -32,6 +34,10 @@ const Projects = () => {
     const onClose = () => {
         setModal(false);
     };
+
+    useEffect(() => {
+        readProject();
+    }, [readProject]);
 
     return (
         <ProjectsBlock>
