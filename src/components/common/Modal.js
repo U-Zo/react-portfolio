@@ -61,7 +61,7 @@ const Modal = ({visible, title, description, onClose}) => {
 
     return (
         <FullScreen onClick={onClose}>
-            <ModalBlock>
+            <ModalBlock onClick={e => e.stopPropagation()}>
                 <h2>{title}</h2>
                 <div>{description}</div>
                 <button className="button" onClick={onClose}>닫기</button>
