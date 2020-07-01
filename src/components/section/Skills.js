@@ -24,7 +24,7 @@ const Wrapper = styled(Responsive)`
 const Skills = () => {
     return (
         <SkillsBlock>
-            <p className="title">Skills</p>
+            <p className="title">기술스택</p>
             <Wrapper>
                 <Card img={<DiHtml5 size="125" color="#FF8200"/>} title="HTML">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
