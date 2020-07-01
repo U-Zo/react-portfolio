@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Card from '../common/Card';
 import Responsive from '../common/Responsive';
 import Modal from '../common/Modal';
-import {readProject} from '../../lib/api/project';
 
 const Project = styled(Card)`
   width: 20%;
@@ -20,13 +19,13 @@ const ProjectsBlock = styled.div`
 `;
 
 const Wrapper = styled(Responsive)`
+  padding-top: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const Projects = () => {
-    const [projects, setProjects] = useState([]);
     const [modal, setModal] = useState(false);
     const onClick = () => {
         setModal(true);
@@ -35,13 +34,9 @@ const Projects = () => {
         setModal(false);
     };
 
-    useEffect(() => {
-        readProject();
-    }, [readProject]);
-
     return (
         <ProjectsBlock>
-            <p className="title">Projects</p>
+            <p className="title">프로젝트</p>
             <Wrapper>
                 <Project onClick={onClick} title="Lorem">
                     Lorem Ipsum is simply dummy text
