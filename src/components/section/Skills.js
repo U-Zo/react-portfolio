@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Card from '../common/Card';
 import {DiHtml5, DiCss3, DiJsBadge} from 'react-icons/di';
+import skills from '../../lib/skills.json';
 
 const SkillsBlock = styled.div`
   background: #fafafa;
@@ -22,10 +23,20 @@ const Wrapper = styled(Responsive)`
 `;
 
 const Skills = () => {
+    const item = skills.map((item) => {
+        return (
+            <Card img={<item.icon size="125" color="#FF8200"/>} title={item.skill}>
+                {item.description}
+            </Card>
+        );
+    })
+
     return (
         <SkillsBlock>
             <p className="title">기술스택</p>
             <Wrapper>
+                {item}
+                {/*
                 <Card img={<DiHtml5 size="125" color="#FF8200"/>} title="HTML">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </Card>
@@ -35,6 +46,7 @@ const Skills = () => {
                 <Card img={<DiJsBadge size="125" color="#FF9614"/>} title="JavaScript">
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </Card>
+                */}
             </Wrapper>
         </SkillsBlock>
     );
