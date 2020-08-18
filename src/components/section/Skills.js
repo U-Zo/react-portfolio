@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import Card from '../common/Card';
-import {DiHtml5, DiCss3, DiJsBadge} from 'react-icons/di';
 import skills from '../../lib/skills.json';
 
 const SkillsBlock = styled.div`
@@ -25,7 +24,7 @@ const Wrapper = styled(Responsive)`
 const Skills = () => {
     const item = skills.map((item) => {
         return (
-            <Card img={<item.icon size="125" color="#FF8200"/>} title={item.skill}>
+            <Card title={item.skill}>
                 {item.description}
             </Card>
         );
