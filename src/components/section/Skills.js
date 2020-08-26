@@ -22,30 +22,15 @@ const Wrapper = styled(Responsive)`
 `;
 
 const Skills = () => {
-    const item = skills.map((item) => {
-        return (
-            <Card title={item.skill}>
-                {item.description}
-            </Card>
-        );
-    })
-
     return (
         <SkillsBlock>
             <p className="title">기술스택</p>
             <Wrapper>
-                {item}
-                {/*
-                <Card img={<DiHtml5 size="125" color="#FF8200"/>} title="HTML">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </Card>
-                <Card img={<DiCss3 size="125" color="#646EFF"/>} title="CSS">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </Card>
-                <Card img={<DiJsBadge size="125" color="#FF9614"/>} title="JavaScript">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                </Card>
-                */}
+                {skills.map((item) => (
+                    <Card title={item.skill}>
+                        {item.description}
+                    </Card>
+                ))}
             </Wrapper>
         </SkillsBlock>
     );

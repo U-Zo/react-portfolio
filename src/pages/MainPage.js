@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import Header from '../components/common/Header';
-import Top from '../components/section/Top';
+import Banner from '../components/section/Banner';
 import Footer from '../components/common/Footer';
 import About from '../components/section/About';
 import Skills from '../components/section/Skills';
@@ -30,7 +30,7 @@ const MainPage = () => {
                     skills={scrollToSkills}
                     projects={scrollToProjects}/>
             </div>
-            <Top/>
+            <Banner/>
             <div ref={aboutRef}><About/></div>
             <div ref={skillsRef}><Skills/></div>
             <div ref={projectsRef}><Projects/></div>

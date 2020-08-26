@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Responsive from './Responsive';
+import {AiFillGithub} from 'react-icons/ai';
 
 const HeaderBlock = styled.div`
   position: fixed;
@@ -58,7 +59,7 @@ const Header = ({home, about, skills, projects}) => {
                         <li onClick={skills}>기술스택</li>
                         <li onClick={projects}>프로젝트</li>
                         <li>
-                            <a href="https://github.com/u-zo" target="_blank">깃허브</a>
+                            <a href="https://github.com/u-zo" target="_blank"><AiFillGithub size="2rem"/></a>
                         </li>
                     </ul>
                 </Wrapper>

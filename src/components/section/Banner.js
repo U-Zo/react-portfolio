@@ -13,7 +13,7 @@ const moving = (x, y) => keyframes`
   }
 `;
 
-const TopBlock = styled.div`
+const BannerBlock = styled.div`
   height: 650px;
   background: url(${backImg}) no-repeat center center;
   background-size: auto;
@@ -37,15 +37,15 @@ const AniRect = styled.img`
   animation-delay: ${props => props.delay};
 `;
 
-const Top = () => {
+const Banner = () => {
     return (
         <>
-            <TopBlock>
+            <BannerBlock>
                 <AniRect src={rec1} top="100px" left="100px" x="20px" y="20px"/>
                 <AniRect src={rec2} top="550px" left="100px" x="20px" y="-20px"/>
-            </TopBlock>
+            </BannerBlock>
         </>
     );
 }
 
-export default Top;
+export default Banner;
