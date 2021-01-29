@@ -1,9 +1,10 @@
 import React from 'react';
+import HeaderContainer from './containers/HeaderContainer';
 
 const App = () => {
   return (
     <>
-      <div></div>
+      <HeaderContainer />
     </>
   );
 };
